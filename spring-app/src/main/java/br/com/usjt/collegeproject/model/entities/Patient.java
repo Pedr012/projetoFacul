@@ -12,11 +12,11 @@ import javax.persistence.Table;
 @Embeddable
 @Table(name = "TB_PATIENT")
 public class Patient extends Person {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	@ManyToOne
 	private Clinic clinic;
 

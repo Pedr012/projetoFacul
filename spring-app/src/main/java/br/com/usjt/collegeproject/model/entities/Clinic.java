@@ -19,27 +19,27 @@ public class Clinic {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
 	@NotBlank(message = "O nome não deve ser vazio!")
 	private String name;
-	
+
 	@NotBlank(message = "O endereço não deve ser vazio!")
 	private String address;
-	
+
 	@Positive(message = "O número deve ser maior que 0!")
 	private int number;
-	
+
 	@Size(min = 14, max = 14, message = "O cnpj é inválido!")
 	private String cnpj;
-	
+
 	@OneToMany(mappedBy = "clinic")
 	private List<Patient> patients;
-	
+
 	@OneToMany(mappedBy = "clinic")
 	private List<Professional> professionals;
-	
+
 	public Clinic() {
-		
+
 	}
 
 	public int getId() {
