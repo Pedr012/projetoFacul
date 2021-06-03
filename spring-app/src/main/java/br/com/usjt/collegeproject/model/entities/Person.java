@@ -1,5 +1,7 @@
 package br.com.usjt.collegeproject.model.entities;
 
+import java.sql.Date;
+
 import javax.persistence.Embedded;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -16,6 +18,12 @@ public class Person {
 
 	@Size(min = 11, max = 11, message = "O telefone é inválido!")
 	private String phone;
+	
+	@NotBlank(message = "O sexo não deve ser vazio!")
+	private String sex;
+	
+	@NotBlank(message = "O nascimento não deve ser vazio!")
+	private Date birthday;
 
 	@Email(message = "O e-mail é inválido!")
 	private String email;
@@ -64,6 +72,22 @@ public class Person {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	public String getEmail() {
