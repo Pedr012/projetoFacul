@@ -61,7 +61,7 @@ public class PatientDAO {
 	    }
 
 	    public void excluir(Patient paciente) {
-	        String sqlDelete = "DELETE FROM paciente WHERE cpf = ?";
+	        String sqlDelete = "UPDATE paciente set deletado = true where cpf = ?;";
 	        // usando o try with resources do Java 7, que fecha o que abriu
 	        try (Connection conn = ConnectionFactory.obtemConexao();
 	                PreparedStatement stm = conn.prepareStatement(sqlDelete);) {

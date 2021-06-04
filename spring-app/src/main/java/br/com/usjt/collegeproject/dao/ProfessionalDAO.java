@@ -67,7 +67,7 @@ public class ProfessionalDAO {
     }
 
     public void excluir(Professional profissional) {
-        String sqlDelete = "DELETE FROM medico WHERE crm = ?";
+        String sqlDelete = "UPDATE medico set deletado = true where crm = ?;";
         // usando o try with resources do Java 7, que fecha o que abriu
         try (Connection conn = ConnectionFactory.obtemConexao();
                 PreparedStatement stm = conn.prepareStatement(sqlDelete);) {
