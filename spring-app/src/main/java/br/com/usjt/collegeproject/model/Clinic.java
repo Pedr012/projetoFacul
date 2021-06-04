@@ -1,4 +1,4 @@
-package br.com.usjt.collegeproject.model.entities;
+package br.com.usjt.collegeproject.model;
 
 import java.util.List;
 
@@ -6,8 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
@@ -17,7 +18,7 @@ import javax.validation.constraints.Size;
 public class Clinic {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	@NotBlank(message = "O nome não deve ser vazio!")
@@ -32,10 +33,10 @@ public class Clinic {
 	@Size(min = 14, max = 14, message = "O cnpj é inválido!")
 	private String cnpj;
 	
-	@OneToMany(mappedBy = "clinic")
+	@ManyToMany
 	private List<Patient> patients;
 	
-	@OneToMany(mappedBy = "clinic")
+	@Transient
 	private List<Professional> professionals;
 	
 	public Clinic() {
