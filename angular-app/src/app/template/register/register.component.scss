@@ -7,6 +7,8 @@
   padding: 1.25rem;
 
   .register-input {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,6 +110,18 @@
           border-top-right-radius: 0.625rem;
           border-bottom-right-radius: 0.625rem;
         }
+      }
+    }
+
+    #search-icon {
+      position: absolute;
+      top: 55%;
+      right: 0.8rem;
+
+      cursor: pointer;
+
+      #search {
+        fill: #a4a4a4;
       }
     }
   }
