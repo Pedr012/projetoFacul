@@ -7,11 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "TB_CLINIC")
@@ -20,27 +17,20 @@ public class Clinic {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@NotBlank(message = "O nome não deve ser vazio!")
+
 	private String name;
-	
-	@NotBlank(message = "O endereço não deve ser vazio!")
 	private String address;
-	
-	@Positive(message = "O número deve ser maior que 0!")
 	private int number;
-	
-	@Size(min = 14, max = 14, message = "O cnpj é inválido!")
 	private String cnpj;
-	
+
 	@ManyToMany
 	private List<Patient> patients;
-	
-	@Transient
+
+	@OneToMany(mappedBy = "clinic")
 	private List<Professional> professionals;
-	
+
 	public Clinic() {
-		
+
 	}
 
 	public int getId() {
