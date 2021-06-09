@@ -1,4 +1,4 @@
-package br.com.usjt.collegeproject.model;
+package br.com.usjt.collegeproject.model;	
 
 import java.util.List;
 
@@ -6,9 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "TB_CLINIC")
@@ -22,9 +23,6 @@ public class Clinic {
 	private String address;
 	private int number;
 	private String cnpj;
-
-	@ManyToMany
-	private List<Patient> patients;
 
 	@OneToMany(mappedBy = "clinic")
 	private List<Professional> professionals;
@@ -73,25 +71,12 @@ public class Clinic {
 		this.cnpj = cnpj;
 	}
 
-	public List<Patient> getPatients() {
-		return patients;
-	}
-
-	public void setPatients(List<Patient> patients) {
-		this.patients = patients;
-	}
-
+	@JsonManagedReference
 	public List<Professional> getProfessionals() {
 		return professionals;
 	}
 
 	public void setProfessionals(List<Professional> professionals) {
 		this.professionals = professionals;
-	}
-
-	@Override
-	public String toString() {
-		return "Clinic [id=" + id + ", name=" + name + ", address=" + address + ", number=" + number + ", cnpj=" + cnpj
-				+ ", patients=" + patients + "]";
 	}
 }

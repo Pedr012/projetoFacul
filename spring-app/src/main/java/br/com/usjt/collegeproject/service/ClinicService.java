@@ -51,6 +51,7 @@ public class ClinicService {
 		List<DistanceMatrixDTO> listMatrixDTO = new ArrayList<DistanceMatrixDTO>(); 
 		for(int i = 0; i < googleAddresses.size(); i++) {
 			DistanceMatrixDTO matrixDTO = new DistanceMatrixDTO();
+			matrixDTO.setId(clinics.get(i).getId());
 			matrixDTO.setName(clinics.get(i).getName().toUpperCase());
 			matrixDTO.setLocation(googleAddresses.get(i));
 			matrixDTO.setDistance(googleDistances.get(i).getText());

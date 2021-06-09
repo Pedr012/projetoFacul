@@ -2,27 +2,26 @@ package br.com.usjt.collegeproject.model;
 
 import java.util.List;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+@Embeddable
 @Table(name = "TB_PATIENT")
 public class Patient extends Person {	
 	
-	@ManyToMany(mappedBy = "patients")
-	private List<Clinic> clinics;
+	@OneToMany(mappedBy = "patient")
+	private List<Consult> consultAssociation;
+	
+	public Patient() { }
 
-	public List<Clinic> getClinics() {
-		return clinics;
+	public List<Consult> getConsultAssociation() {
+		return consultAssociation;
 	}
 
-	public void setClinics(List<Clinic> clinics) {
-		this.clinics = clinics;
-	}
-
-	@Override
-	public String toString() {
-		return "Patient [toString()=" + super.toString() + "]";
+	public void setConsultAssociation(List<Consult> consultAssociation) {
+		this.consultAssociation = consultAssociation;
 	}
 }

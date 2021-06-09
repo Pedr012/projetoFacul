@@ -1,24 +1,20 @@
-package br.com.usjt.collegeproject.model;
+ package br.com.usjt.collegeproject.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "TB_PROFESSIONAL")
 public class Professional extends Person {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
 	
 	private String crm;
 
 	@ManyToOne
 	private Clinic clinic;
+	
 
 	public Professional() {
 
@@ -32,6 +28,7 @@ public class Professional extends Person {
 		this.crm = crm;
 	}
 
+	@JsonBackReference
 	public Clinic getClinic() {
 		return clinic;
 	}

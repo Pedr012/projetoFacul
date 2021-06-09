@@ -9,8 +9,10 @@ import axios from 'axios';
 })
 export class ConsultComponent implements OnInit {
 
-  public myLocation = "R. Oscar Pedroso Horta, 761"
+  public myLocation: string
+  public now: string
   public clinics: [{
+    id: number,
     name: string,
     location: string,
     formatedLocation: string,
@@ -18,14 +20,17 @@ export class ConsultComponent implements OnInit {
     value: number
   }]
 
-  public now: string
 
   async ngOnInit() {
+    this.myLocation = "Av. Angélica, 2565"
+    this.now = this.nowDate()
     await axios.get('http://localhost:8080/clinics?address=' + this.myLocation)
       .then(response => {
         this.clinics = response.data
       }) 
-    
+  }
+
+  nowDate() {
     const date = new Date()
     const year = date.getFullYear()
     const month = date.getMonth() > 10
@@ -35,13 +40,14 @@ export class ConsultComponent implements OnInit {
       ? date.getDate()
       : '0' + date.getDate()
     const fullDate = `${year}-${month}-${day}`
-    this.now = fullDate
+    
+    return fullDate
   }
 
   chooseClinic(event: Event) {
     const target = event.target as HTMLElement
     if(target.nodeName === 'TR') {
-      
+      const input = target.querySelector("input") as HTMLInputElement
     }
   }
 }

@@ -11,6 +11,7 @@
             <table id="clinics">
                 <tbody>
                     <tr *ngFor="let clinic of clinics" (click)="chooseClinic($event)">
+                        <input type="hidden" value="{{ clinic.id }}">
                         <td>{{ clinic.name }}</td>
                         <td>{{ clinic.location }} 
                             <a
