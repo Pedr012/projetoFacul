@@ -6,24 +6,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { RegisterComponent } from './template/register/register.component';
-import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { ConsultComponent } from './template/consult/consult.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    CabecalhoComponent,
-    ConsultComponent],
+    ConsultComponent,
+    NavbarComponent,
+    SidebarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule],
-  providers: [
-
+    FormsModule,
   ],
-  bootstrap: [
-    AppComponent
-  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+
+export class AppModule {}
