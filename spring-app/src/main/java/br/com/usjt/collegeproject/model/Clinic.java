@@ -88,4 +88,10 @@ public class Clinic {
 	public void setProfessionals(List<Professional> professionals) {
 		this.professionals = professionals;
 	}
+
+	@Override
+	public String toString() {
+		return "Clinic [id=" + id + ", name=" + name + ", address=" + address + ", number=" + number + ", cnpj=" + cnpj
+				+ ", patients=" + patients + "]";
+	}
 }

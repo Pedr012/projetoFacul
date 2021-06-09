@@ -9,9 +9,10 @@ import { RegisterComponent } from './template/register/register.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConsultComponent } from './template/consult/consult.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, CabecalhoComponent],
+  declarations: [AppComponent, RegisterComponent, CabecalhoComponent, ConsultComponent],
   imports: [BrowserModule, AppRoutingModule, MatToolbarModule, BrowserAnimationsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

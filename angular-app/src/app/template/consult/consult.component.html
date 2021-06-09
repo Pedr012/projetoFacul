@@ -1,0 +1,27 @@
+<div id="consult">
+    <label for="date">Data desejada</label>
+    <input id="date" type="date" min="{{ now }}">
+    <section id="clinics-container">
+        <div id="table-header">
+            <span>Clínica</span>
+            <span>Localização</span>
+            <span>Distância</span>
+        </div>
+        <div id="clinics-scroll">
+            <table id="clinics">
+                <tbody>
+                    <tr *ngFor="let clinic of clinics" (click)="chooseClinic($event)">
+                        <td>{{ clinic.name }}</td>
+                        <td>{{ clinic.location }} 
+                            <a
+                                href="https://www.google.com.br/maps/dir/{{ myLocation }}/{{ clinic.location }}"
+                                target="_blank">como chegar
+                            </a>
+                        </td>
+                        <td>{{ clinic.distance }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>

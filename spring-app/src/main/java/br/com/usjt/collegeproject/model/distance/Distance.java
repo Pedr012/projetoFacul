@@ -1,0 +1,33 @@
+package br.com.usjt.collegeproject.model.distance;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties
+public class Distance {
+
+	private String text;
+	private int value;
+	
+	public Distance() { }
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return "Distance [text=" + text + ", value=" + value + "]";
+	}
+}

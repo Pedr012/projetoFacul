@@ -23,7 +23,10 @@ public class PatientService {
 		boolean attributesPatient = checkPatientAttributes(patient);
 		if(!attributesPatient) return "Algum campo foi preenchido incorretamente!"; 
 		
-		if(nullPatient && attributesPatient) {
+		boolean alreadyExists = patientRepository.checkExist(patient.getCpf()).isPresent() ? true : false;
+		if(alreadyExists) return "Esse cpf já está cadastrado!";
+		
+		if(nullPatient && attributesPatient && !alreadyExists) {
 			patientRepository.save(patient);
 		}
 		return "Paciente cadastrado!";
