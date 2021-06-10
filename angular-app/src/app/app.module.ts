@@ -7,8 +7,10 @@ import { AppComponent } from './app.component';
 
 import { RegisterComponent } from './template/register/register.component';
 import { ConsultComponent } from './template/consult/consult.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PginicialComponent } from './pginicial/pginicial.component';
+import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { ConsultasAtivasComponent } from './consultas-ativas/consultas-ativas.component';
 
 @NgModule({
   declarations: [
@@ -16,15 +18,17 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     RegisterComponent,
     ConsultComponent,
     NavbarComponent,
-    SidebarComponent,
+    PginicialComponent,
+    TelaLoginComponent,
+    ConsultasAtivasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 
 export class AppModule {}

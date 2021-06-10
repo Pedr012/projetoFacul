@@ -1,0 +1,26 @@
+<nav id="main">
+    <ul id="nav-options">
+        <li class="option">INÍCIO</li>
+        <li class="option">SOBRE</li>
+        <li *ngIf="online; then userOnline else userOffline"></li>
+        <ng-template #userOnline>
+            <li class="option action">SAIR</li>
+            <li id="hamburguer" class="option" (click)="handleMenu()">
+                <div id="hamburguer-icon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </li>
+        </ng-template>
+        <ng-template #userOffline>
+            <li class="option action">ENTRAR</li>
+        </ng-template>
+    </ul>
+</nav>
+<div *ngIf="online" id="menu">
+    <ul id="menu-options">
+        <li class="option">PERFIL</li>
+        <li class="option">CONSULTAS</li>
+    </ul>
+</div>

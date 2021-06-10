@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="Caio Rodrigo, Fernando Bonatto, Bruno Brito, Victor Talge e Pedro">
+  <title>Telemedicina USJT</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="consultas-ativas.component.scss" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div class="border-end-0 bg-lime" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom-0 bg-lime">Telemedicina USJT</div>
+      <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action list-group-item-lime p-3" href="#!">Perfil</a>
+        <a class="list-group-item list-group-item-action list-group-item-lime p-3" routerLink="/consultas">Consultas</a>
+      </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-lime border-bottom-0">
+        <div class="container-fluid">
+          <button class="btn" id="sidebarToggle"><i class="fas fa-align-justify text-light"></i></button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <button class="btn">
+                <a href="#!" class="nav-link">Início</a>
+              </button>
+              <button class="btn">
+                <a href="#!" class="nav-link">Sobre</a>
+              </button>
+              <button class="btn btn-info">
+                <a class="nav-link" href="#!">Entrar</a>
+              </button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page content-->
+      <div class="container">
+        <table class="table rounded border p-3 m-3">
+          <thead>
+            <tr>
+              <th colspan="4" scope="col">Consultas ativas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Nome profissional</td>
+              <td>Clínica</td>
+              <td>01/02/2023 12:34:56</td>
+              <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">Nome profissional</td>
+              <td>Clínica</td>
+              <td>01/02/2023 12:34:56</td>
+              <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">Nome profissional</td>
+              <td>Clínica</td>
+              <td>01/02/2023 12:34:56</td>
+              <td><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/38836afb8b.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
