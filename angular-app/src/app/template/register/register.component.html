@@ -1,60 +1,60 @@
 <div id="register">
-    <div *ngIf="message" id="teste" style="right: 2rem">oi</div>
-    <div class="register-input">
-        <label for="name">Nome completo *</label>
-        <input type="text" name="name" id="name" placeholder="Ana Maria Da Silva" [(ngModel)]="name">
+  <div *ngIf="message" id="teste" style="right: 2rem">oi</div>
+  <div class="register-input">
+    <label for="name">Nome completo *</label>
+    <input type="text" name="name" id="name" placeholder="Ana Maria Da Silva" [(ngModel)]="name">
+  </div>
+  <div class="register-input">
+    <label for="birth">Data de nascimento *</label>
+    <input type="text" name="birth" id="birth" placeholder="xx/xx/xxxx" [(ngModel)]="birth">
+  </div>
+  <div class="register-input">
+    <span>Sexo</span>
+    <div id="choose">
+      <div class="bubble left"></div>
+      <button type="button" (click)="choose($event)">Masculino</button>
+      <button type="button" (click)="choose($event)">Feminino</button>
     </div>
-    <div class="register-input">
-        <label for="birth">Data de nascimento *</label>
-        <input type="text" name="birth" id="birth" placeholder="xx/xx/xxxx" [(ngModel)]="birth">
-    </div>
-    <div class="register-input">
-        <span>Sexo</span>
-        <div id="choose">
-            <div class="bubble left"></div>
-            <button type="button" (click)="choose($event)">Masculino</button>
-            <button type="button" (click)="choose($event)">Feminino</button>
-        </div>
-    </div>
-    <div class="register-input">
-        <label for="phone">Celular *</label>
-        <input type="text" name="phone" id="phone" placeholder="(xx) xxxxx-xxxx" [(ngModel)]="phone">
-    </div>
-    <div class="register-input">
-        <label for="email">E-mail *</label>
-        <input type="email" name="email" id="email" placeholder="email@hotmail.com" [(ngModel)]="email">
-    </div>
-    <div class="register-input">
-        <label for="cpf">CPF *</label>
-        <input type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx" [(ngModel)]="cpf">
-    </div>
-    <div class="register-input">
-        <label for="cep">CEP</label>
-        <input type="text" name="cep" id="cep" placeholder="xxxxx-xxx" [(ngModel)]="cep">
-        <svg id="search-icon" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 446.25 446.25"
-            (click)="findAddress()">
-            <g id="search">
-                <path d="M318.75,280.5h-20.4l-7.649-7.65c25.5-28.05,40.8-66.3,40.8-107.1C331.5,73.95,257.55,0,165.75,0S0,73.95,0,165.75
+  </div>
+  <div class="register-input">
+    <label for="phone">Celular *</label>
+    <input type="text" name="phone" id="phone" placeholder="(xx) xxxxx-xxxx" [(ngModel)]="phone">
+  </div>
+  <div class="register-input">
+    <label for="email">E-mail *</label>
+    <input type="email" name="email" id="email" placeholder="email@hotmail.com" [(ngModel)]="email">
+  </div>
+  <div class="register-input">
+    <label for="cpf">CPF *</label>
+    <input type="text" name="cpf" id="cpf" placeholder="xxx.xxx.xxx-xx" [(ngModel)]="cpf">
+  </div>
+  <div class="register-input">
+    <label for="cep">CEP</label>
+    <input type="text" name="cep" id="cep" placeholder="xxxxx-xxx" [(ngModel)]="cep">
+    <svg id="search-icon" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 446.25 446.25"
+      (click)="findAddress()">
+      <g id="search">
+        <path d="M318.75,280.5h-20.4l-7.649-7.65c25.5-28.05,40.8-66.3,40.8-107.1C331.5,73.95,257.55,0,165.75,0S0,73.95,0,165.75
 			    S73.95,331.5,165.75,331.5c40.8,0,79.05-15.3,107.1-40.8l7.65,7.649v20.4L408,446.25L446.25,408L318.75,280.5z M165.75,280.5
 			    C102,280.5,51,229.5,51,165.75S102,51,165.75,51S280.5,102,280.5,165.75S229.5,280.5,165.75,280.5z" />
-            </g>
-        </svg>
-    </div>
-    <div class="register-input">
-        <label for="address">Logradouro *</label>
-        <input type="text" name="address" id="address" [(ngModel)]="address">
-    </div>
-    <div class="register-input">
-        <label for="number">Número *</label>
-        <input type="text" name="number" id="number" [(ngModel)]="number">
-    </div>
-    <div class="register-input">
-        <label for="password">Senha *</label>
-        <input type="password" name="password" id="password" [(ngModel)]="password">
-    </div>
-    <div class="register-input">
-        <label for="repeat-password">Repetir senha *</label>
-        <input type="password" name="repeat-password" id="repeat-password" [(ngModel)]="repeatPassword">
-    </div>
-    <button type="button" id="end-register" (click)="registerUser()">Cadastrar</button>
+      </g>
+    </svg>
+  </div>
+  <div class="register-input">
+    <label for="address">Logradouro *</label>
+    <input type="text" name="address" id="address" [(ngModel)]="address">
+  </div>
+  <div class="register-input">
+    <label for="number">Número *</label>
+    <input type="text" name="number" id="number" [(ngModel)]="number">
+  </div>
+  <div class="register-input">
+    <label for="password">Senha *</label>
+    <input type="password" name="password" id="password" [(ngModel)]="password">
+  </div>
+  <div class="register-input">
+    <label for="repeat-password">Repetir senha *</label>
+    <input type="password" name="repeat-password" id="repeat-password" [(ngModel)]="repeatPassword">
+  </div>
+  <button type="button" id="end-register" (click)="registerUser()" routerLink="/consultAtv">Cadastrar</button>
 </div>
